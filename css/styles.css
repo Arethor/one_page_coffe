@@ -1,0 +1,582 @@
+/* UTILERIA
+
+
+Tabla rápida de opacidad para colores en formato HEX.
+Añadir el sufijo al final del valor HEX:
+
+100%  FF
+90%   E6
+80%   CC
+70%   B3
+60%   99
+50%   80
+40%   66
+30%   4D
+20%   33
+10%   1A
+0%    00
+
+Colores:
+
+- Contenedores principales (Claros):      #e9d4c1
+- Contenedores secundarios (Muy Claros):  #eae1d8
+
+- Contenedores inset (Oscuros):           rgba(84, 56, 41, 0.75)
+
+*/
+
+/* ^*^*^*^*^* INICIO - PLANTILLA *^*^*^*^*^ */
+/* ^*^*^*^*^* FIN - PLANTILLA *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* AJUSTES GENERALES *^*^*^*^*^ */
+
+/* Reset global: elimina márgenes y rellenos por defecto */
+* {
+  margin: 0;
+  padding: 0;
+
+  /* Previene scroll horizontal accidental */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Propiedad global para desplazamientos suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset para imagenes y videos */
+img, video {
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  background-image: url("../media/images/bg-body/bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+
+  /* Por si no carga la imagen */
+  background-color: #543829;
+}
+
+/* Estilo aplicado a todas las imágenes */
+/* Idea proporcionada por Álvaro */
+img {
+  border-radius: 0% 50%;
+}
+
+/* Imagen de cabecera con logo superpuesto */
+.img-cabecera {
+  width: 100%;
+  height: 100vh;
+
+  box-shadow: 0 5px 15px #28241f;
+
+  background: 
+    url("../media/images/logo/logo.png"),
+    url("../media/images/bg-header/header.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 98% 8%, center center;
+  background-attachment: fixed, fixed;
+  background-size: 180px auto, cover;
+
+  position: relative;
+  transition: background-image 0.5s ease-in-out;
+
+  margin-bottom: 50px;
+}
+
+/* Secciones con padding para no solapar el menú fijo */
+section {
+  padding-top: 50px;
+}
+
+/* Contenedores principales */
+.con-tenedor {
+  background-color: #e9d4c1;
+  box-shadow: 0 5px 15px #28241f;
+
+  border: 1px solid black;
+  border-radius: 0px 0px 10px 10px;
+
+  padding: 25px;
+  margin-bottom: 100px;
+}
+
+/* Contenedores y cabeceras alineados con márgenes */
+.con-tenedor, .con-cabezados {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+/* Contenedores secundarios */
+.con-cuchara {
+  background-color: #eae1d8;
+
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+
+  padding: 10px;
+  margin: 0px 20px 10px 20px;
+
+  box-shadow: 0px 5px 15px #28241f;
+}
+
+p {
+  width: 60%;
+
+  font-family: verdana;
+  font-size: 16px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+
+  margin: 20px 0px 30px 30px;
+}
+
+/* ^*^*^*^*^* FIN - AJUSTES GENERALES *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - ENCABEZADOS *^*^*^*^*^ */
+
+h1, h2 {
+  width: 100%;
+
+  text-shadow: 2px 2px 2px #eae1d8;
+  text-align: center;
+
+  font-size: 47px;
+  font-family: Cambria;
+
+  background: linear-gradient(
+    to right,
+    #543829BF,
+    #cab39dBF
+  );
+
+  border: 1px solid black;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* ^*^*^*^*^* FIN - ENCABEZADOS *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - FORMATO *^*^*^*^*^ */
+
+/* Texto en negrita ligera */
+.s-bold {
+  font-weight: 600;
+}
+
+/* ^*^*^*^*^* FIN - FORMATO *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - NAV *^*^*^*^*^ */
+
+/* Contenedor principal del menú */
+header > div {
+  width: 100%;
+  text-align: center;
+
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+
+  margin-top: 4px;
+}
+
+nav ul {
+  padding-bottom: 20px;
+}
+
+/* Links del menú */
+nav a {
+  color: white;
+  text-decoration: none;
+
+  font-family: verdana, sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+
+  display: block;
+}
+
+/* Elementos de la lista del menú */
+nav li {
+  width: 10%;
+
+  display: inline-block;
+  position: relative;
+
+  text-align: center;
+  list-style: none;
+
+  background-color: #28241fBF;
+  background-repeat: no-repeat;
+  /* Posicion inicial del icono */
+  background-position: 150% 0px;
+  background-size: 28px 28px;
+  
+  box-shadow: 3px 5px 9px rgba(0, 0, 0, 0.9);
+
+  margin-right: 10px;
+}
+
+/* Efecto hover: muestra una taza y cambia sombra */
+nav li:hover {
+  background-image: url("../media/images/icons/taza.png");
+  /* Posicion final del icono */
+  background-position: 2% bottom;
+  transition: background-position 0.7s ease;
+
+  box-shadow: 3px 5px 9px rgba(213, 209, 204, 0.9);
+}
+
+/* ^*^*^*^*^* FIN - NAV *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - FONDOS *^*^*^*^*^ */
+
+.bg-cafe {
+  background-image: url("../media/images/bg-sections/inicio.jpg");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: auto 100%;
+}
+
+/* ^*^*^*^*^* FIN - FONDOS *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - NOSOTROS *^*^*^*^*^ */
+
+/* Espaciado adicional entre bloques */
+#nosotros div div[class*="con-cuchara"] {
+  margin-bottom: 50px;
+}
+
+#nosotros table {
+  width: 100%;
+  text-align: center;
+  table-layout: fixed;
+  margin-bottom: 10px;
+}
+
+#nosotros tr {
+  max-height: 380px;
+}
+
+#nosotros td {
+  width: 33.33%;
+
+  font-family: verdana, sans-serif;
+  font-weight: 600;
+
+  padding: 25px 50px;
+}
+
+#nosotros img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  box-shadow: 3px 5px 9px #28241f;
+}
+
+#nosotros img:hover {
+  box-shadow: 3px 5px 20px #28241f;
+}
+
+/* ^*^*^*^*^* FIN - NOSOTROS *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - MULTIMEDIA *^*^*^*^*^ */
+
+#multimedia table {
+  margin: auto;
+
+  border-collapse: separate;
+  border-spacing: 30px 30px;
+
+  padding-bottom: 60px;
+}
+
+#multimedia tr {
+  border: 2px solid black;
+}
+
+#multimedia td {
+  border: 1px solid black;
+  box-shadow: 0px 5px 15px #28241f;
+}
+
+#multimedia iframe, 
+#multimedia video {
+  width: 100%;
+  display: block;
+}
+
+#multimedia video {
+  height: 200px;
+}
+
+#multimedia iframe {
+  height: 280px;
+}
+
+/* ^*^*^*^*^* FIN - MULTIMEDIA *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - PODCAST *^*^*^*^*^ */
+
+.bg-podcast {
+  background-image: url("../media/images/bg-sections/podcasts.png");
+  background-repeat: no-repeat;
+  background-position: 99% 99%;
+  background-size: auto 50%;
+}
+
+#podcast div[class*="con-tenedor"] {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#podcast .con-cuchara {
+  width: 70%;
+  overflow: hidden;
+  border-radius: 100px 0% 0% 100px;
+  margin-bottom: 30px;
+}
+
+/* Primer div: título y audio */
+#podcast .con-cuchara > div:first-child {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Segundo div: párrafo descriptivo */
+#podcast .con-cuchara > div:last-child {
+  width: 65%;
+  float: right;
+  text-align: left;
+
+  box-shadow: inset 0px 5px 10px rgba(0,0,0,0.5);
+  border: 1px inset black;
+
+  background-color: rgba(84, 56, 41, 0.75);
+
+  padding: 15px;
+  box-sizing: border-box;
+  min-height: 130px;
+}
+
+#podcast p {
+  width: 100%;
+  color: #eae1d8;
+  margin: 10px;
+}
+
+#podcast h3 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* ^*^*^*^*^* FIN - PODCAST *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - RESEÑAS *^*^*^*^*^ */
+
+.bg-reviews {
+  background-image: url("../media/images/bg-sections/reviews.png");
+  background-repeat: no-repeat;
+  background-position: 99% 99%;
+  background-size: auto 50%;
+}
+
+#reviews div div {
+  width: 60%;
+}
+
+/* ^*^*^*^*^* FIN - RESEÑAS *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - REDES SOCIALES *^*^*^*^*^ */
+
+.bg-networks {
+  background-image: 
+    url("../media/images/bg-sections/1-networks.png"),
+    url("../media/images/bg-sections/2-networks.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 8% 70%, 88% 15%;
+  background-size: auto 20%, auto 20%;
+
+  /* Efecto parallax */
+  background-attachment: fixed, fixed;
+}
+
+#redes div div {
+  width: 95%;
+
+  background-color: #eae1d8CC;
+  border-radius: 0px 15px 0px 15px;
+
+  padding-top: 20px;
+}
+
+#redes img {
+  width: 30px;
+  height: auto;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#redes a {
+  color: black;
+  text-decoration: none;
+  
+  font-weight: 900;
+  font-size: 28px;
+}
+
+#redes p {
+  font-weight: 400;
+}
+
+/* ^*^*^*^*^* FIN - REDES SOCIALES *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - CONTACTO *^*^*^*^*^ */
+
+#contacto {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#contacto form, 
+#contacto iframe {
+  height: 400px;
+  width: 49%;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+#contacto form {
+  margin-left: 20px;
+}
+
+#contacto iframe {
+  border: 1px solid black;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  margin: 25px 0px;
+}
+
+#contacto textarea, 
+#contacto input {
+  padding-left: 8px;
+  margin: 15px 0px 1px 15px;
+}
+
+#contacto textarea {
+  padding-top: 5px;
+  width: 90%;
+  height: 180px;
+}
+
+#contacto input {
+  width: 180px;
+  height: 20px;
+}
+
+#contacto form div div {
+  display: inline-block;
+}
+
+#contacto form h3 {
+  font-size: 26px;
+  margin-left: 12px;
+}
+
+/* ^*^*^*^*^* FIN - CONTACTO *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - FOOTER *^*^*^*^*^ */
+
+footer div {
+  background-color: #e9d4c199;
+  box-shadow: 0 5px 15px #28241f;
+
+  text-align: center;
+
+  border: 2px solid black;
+
+  padding: 0;
+  margin: 0px 60px 20px 60px;
+}
+
+footer p {
+  width: 100%;
+  font-family: Consolas;
+
+  padding: 0;
+  margin: 10px;
+}
+
+/* ^*^*^*^*^* FIN - FOOTER *^*^*^*^*^ */
+
+
+
+/* ^*^*^*^*^* INICIO - SUBIR *^*^*^*^*^ */
+
+#subir {
+  position: fixed;
+  opacity: 0;
+
+  bottom: 5px;
+  right: 7px;
+
+  /* Mientras está oculto, no se puede clicar */
+  pointer-events: none;
+
+  /* Transiciones suaves para opacidad y movimiento */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  /* Desplazado inicialmente 20px hacia abajo */
+  transform: translateY(20px);
+}
+
+/* Al mover el ratón sobre body, el botón aparece */
+body:hover #subir {
+  opacity: 1;
+
+  /* Vuelve a ser clicable */
+  pointer-events: auto;
+
+  /* Vuelve a su posición original */
+  transform: translateY(0);
+}
+
+#subir img {
+  width: 45px;
+  height: 45px;
+}
+
+/* ^*^*^*^*^* FIN - SUBIR *^*^*^*^*^ */
